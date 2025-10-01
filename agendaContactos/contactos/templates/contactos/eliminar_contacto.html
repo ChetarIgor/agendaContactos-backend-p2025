@@ -1,0 +1,24 @@
+{% extends 'contactos/base.html' %}
+
+{% block content %}
+    <h2>Eliminar Contacto</h2>
+
+    <div class="confirm-container">
+        <p class="confirmation-text">
+            ¿Estás seguro de que deseas eliminar a <strong>{{ contacto.nombre }}</strong>?
+        </p>
+
+        <form method="post" class="form-delete">
+            {% csrf_token %}
+            
+            <div class="button-container">
+                <button type="submit" class="btn-delete">Eliminar</button>
+                <a href="{% url 'listar_contactos' %}" class="btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+
+

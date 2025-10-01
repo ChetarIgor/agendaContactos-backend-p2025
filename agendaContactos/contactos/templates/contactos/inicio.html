@@ -1,0 +1,12 @@
+{% extends 'contactos/base.html' %}
+
+{% block content %}
+    <h2>Bienvenido a tu Agenda de Contactos Personal</h2>
+    <p>Aquí podrás gestionar tus contactos de manera sencilla. Usa estas opciones de abajo para comenzar a agregar un contacto o ver la lista de contactos.</p>
+
+    <div class="button-container">
+        <a href="{% url 'agregar_contacto' %}" class="btn-action">Agregar Contacto</a>
+        <a href="{% url 'listar_contactos' %}" class="btn-action">Lista Contactos</a>
+    </div>
+{% endblock %}
+

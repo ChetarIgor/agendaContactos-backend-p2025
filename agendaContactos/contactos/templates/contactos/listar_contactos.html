@@ -1,0 +1,33 @@
+{% extends 'contactos/base.html' %}
+
+{% block content %}
+    <h2>Lista de Contactos</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Dirección</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contacto in contactos %}
+                <tr>
+                    <td>{{ contacto.nombre }}</td>
+                    <td>{{ contacto.telefono }}</td>
+                    <td>{{ contacto.correo }}</td>
+                    <td>{{ contacto.direccion }}</td>
+                    <td>
+                        <a href="{% url 'editar_contacto' contacto.pk %}">Editar</a>
+                        <a href="{% url 'eliminar_contacto' contacto.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
