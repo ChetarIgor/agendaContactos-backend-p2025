@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Agregar/Editar Contacto</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div>
+        <label>Nombre:</label>
+        {{ form.nombre }}
+        {% for error in form.nombre.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label>Teléfono:</label>
+        {{ form.telefono }}
+        {% for error in form.telefono.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label>Correo:</label>
+        {{ form.correo }}
+        {% for error in form.correo.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label>Dirección:</label>
+        {{ form.direccion }}
+        {% for error in form.direccion.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

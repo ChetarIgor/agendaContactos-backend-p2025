@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contactos</title>
+    <title>Agenda de Contactos Personales</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -15,7 +15,7 @@
             color: #333;
         }
         nav {
-            background-color: #003366; /* Azul oscuro */
+            background-color: #003366;
             padding: 15px;
             display: flex;
             justify-content: space-between;
@@ -33,17 +33,17 @@
             font-size: 16px;
             font-weight: 500;
             padding: 10px 20px;
-            background-color: #0066cc; /* Azul claro para los botones */
+            background-color: #0066cc;
             border-radius: 5px;
-            transition: all 0.3s ease; /* Transición suave para efectos */
+            transition: all 0.3s ease;
             display: inline-block;
         }
         nav a:hover {
-            background-color: #005bb5; /* Azul más oscuro al pasar el ratón */
-            transform: scale(1.05); /* Efecto de agrandamiento */
+            background-color: #005bb5;
+            transform: scale(1.05);
         }
         nav a:active {
-            transform: scale(0.98); /* Efecto de presionado */
+            transform: scale(0.98);
         }
         .container {
             max-width: 900px;
@@ -64,29 +64,29 @@
 
         .btn-action {
             padding: 15px 30px;
-            background-color: #003366; /* Azul oscuro */
+            background-color: #003366;
             color: white;
             font-size: 18px;
             font-weight: 500;
             border-radius: 8px;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.3s ease; /* Transición suave */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn-action:hover {
-            background-color: #00224d; /* Azul más oscuro */
-            transform: scale(1.05);  /* Aumento del tamaño con hover */
+            background-color: #00224d;
+            transform: scale(1.05); 
         }
 
         .btn-action:active {
-            transform: scale(0.98); /* Efecto de "presionado" */
+            transform: scale(0.98); 
         }
 
         .btn-action:focus {
-            outline: none;  /* Eliminar el borde de enfoque predeterminado */
-            box-shadow: 0 0 10px rgba(0, 51, 102, 0.8); /* Resaltar cuando se hace foco */
+            outline: none; 
+            box-shadow: 0 0 10px rgba(0, 51, 102, 0.8); 
         }
 
         /* Estilos para la tabla de contactos */
@@ -106,7 +106,7 @@
         }
 
         th {
-            background-color: #003366; /* Azul oscuro */
+            background-color: #003366; 
             color: white;
         }
 
@@ -120,7 +120,7 @@
 
         td a {
             padding: 8px 15px;
-            background-color: #28a745; /* Verde suave */
+            background-color: #28a745; 
             color: white;
             border-radius: 5px;
             text-decoration: none;
@@ -131,7 +131,7 @@
         }
 
         td a:last-child {
-            background-color: #dc3545; /* Rojo suave */
+            background-color: #dc3545;
         }
 
         td a:last-child:hover {
@@ -173,13 +173,13 @@
 
         .form-agregar-contacto .form-group input:focus,
         .form-agregar-contacto .form-group select:focus {
-            border-color: #003366; /* Azul oscuro cuando se hace foco */
+            border-color: #003366;
             outline: none;
         }
 
         .form-agregar-contacto .btn {
             padding: 12px 20px;
-            background-color: #003366; /* Azul oscuro */
+            background-color: #003366;
             color: white;
             border: none;
             border-radius: 5px;
@@ -189,7 +189,7 @@
         }
 
         .form-agregar-contacto .btn:hover {
-            background-color: #00224d; /* Azul más oscuro */
+            background-color: #00224d; 
         }
 
         /* Estilos para la página de eliminar contacto */
@@ -222,7 +222,7 @@
 
         .btn-delete {
             padding: 12px 20px;
-            background-color: #dc3545; /* Rojo para eliminar */
+            background-color: #dc3545; 
             color: white;
             font-size: 16px;
             font-weight: 500;
@@ -233,12 +233,12 @@
         }
 
         .btn-delete:hover {
-            background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+            background-color: #c82333;
         }
 
         .btn-cancel {
             padding: 12px 20px;
-            background-color: #28a745; /* Verde para cancelar */
+            background-color: #28a745; 
             color: white;
             font-size: 16px;
             font-weight: 500;
@@ -249,7 +249,7 @@
         }
 
         .btn-cancel:hover {
-            background-color: #218838; /* Verde más oscuro al pasar el ratón */
+            background-color: #218838; 
         }
     </style>
 </head>
@@ -257,7 +257,7 @@
 
     <!-- Navbar -->
     <nav>
-        <h1>Agenda de Contactos</h1>
+        <h1>Agenda de Contactos Personales</h1>
         <div>
             <a href="{% url 'inicio' %}"><i class="fas fa-home"></i> Inicio</a>
             <a href="{% url 'listar_contactos' %}"><i class="fas fa-list"></i> Lista</a>
