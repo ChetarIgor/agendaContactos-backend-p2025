@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('contactos.urls')),
+    path('', include('contactos.urls')), #Redirigo a las rutas principales de la app Contactos
 ]

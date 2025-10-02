@@ -54,7 +54,7 @@
             border-radius: 10px;
         }
 
-        /* Estilos para los botones de "Inicio" (Agregar Contacto y Listar Contactos) */
+        /* Estilos para los botones de Inicio */
         .button-container {
             display: flex;
             justify-content: center;
@@ -94,6 +94,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            table-layout: fixed; /* 🔹 Para que respete los anchos */
         }
 
         table, th, td {
@@ -103,6 +104,9 @@
         th, td {
             padding: 12px;
             text-align: left;
+            overflow-wrap: break-word; /* 🔹 Permite cortar palabras largas */
+            word-break: break-word;
+            white-space: normal;
         }
 
         th {
@@ -118,27 +122,36 @@
             background-color: #f1f1f1;
         }
 
-        td a {
-            padding: 8px 15px;
-            background-color: #28a745; 
-            color: white;
+        th:nth-child(4), td:nth-child(4),
+        td.direccion {
+            max-width: 320px;
+        }
+
+        th:nth-child(5), td:nth-child(5), td.acciones {
+            white-space: nowrap;
+            width: 160px;
+            text-align: center;
+        }
+
+        td.acciones a {
+            display: inline-block;
+            margin: 0 6px;
+            padding: 8px 10px;
             border-radius: 5px;
+            color: #fff;
             text-decoration: none;
+            font-weight: 500;
         }
 
-        td a:hover {
-            background-color: #218838;
+        td.acciones a:first-child { background-color: #28a745; }  /* Editar */
+        td.acciones a:last-child  { background-color: #dc3545; }  /* Eliminar */
+
+        td.acciones a:hover {
+            filter: brightness(0.95);
+            transform: none;
         }
 
-        td a:last-child {
-            background-color: #dc3545;
-        }
-
-        td a:last-child:hover {
-            background-color: #c82333;
-        }
-
-        /* Estilos para el formulario de agregar contacto */
+        /* Estilos formulario agregar contacto */
         .form-agregar-contacto {
             display: grid;
             gap: 20px;
@@ -192,7 +205,7 @@
             background-color: #00224d; 
         }
 
-        /* Estilos para la página de eliminar contacto */
+        /* Estilos para eliminar contacto */
         .confirm-container {
             padding: 30px;
             background-color: #fff;
@@ -260,7 +273,7 @@
         <h1>Agenda de Contactos Personales</h1>
         <div>
             <a href="{% url 'inicio' %}"><i class="fas fa-home"></i> Inicio</a>
-            <a href="{% url 'listar_contactos' %}"><i class="fas fa-list"></i> Lista</a>
+            <a href="{% url 'lista_contactos' %}"><i class="fas fa-list"></i> Lista</a>
             <a href="{% url 'agregar_contacto' %}"><i class="fas fa-user-plus"></i> Agregar</a>
         </div>
     </nav>
@@ -273,6 +286,7 @@
 
 </body>
 </html>
+
 
 
 

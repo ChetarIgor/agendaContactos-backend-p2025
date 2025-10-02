@@ -12,15 +12,15 @@ def agregar_contacto(request):
         form = ContactoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_contactos')
+            return redirect('lista_contactos')
     else:
         form = ContactoForm()
     return render(request, 'contactos/agregar_contacto.html', {'form': form})
 
 # Vista para listar contactos
-def listar_contactos(request):
+def lista_contactos(request):
     contactos = Contacto.objects.all()
-    return render(request, 'contactos/listar_contactos.html', {'contactos': contactos})
+    return render(request, 'contactos/lista_contactos.html', {'contactos': contactos})
 
 # Vista para editar un contacto
 def editar_contacto(request, id):
@@ -29,7 +29,7 @@ def editar_contacto(request, id):
         form = ContactoForm(request.POST, instance=contacto)
         if form.is_valid():
             form.save()
-            return redirect('listar_contactos')
+            return redirect('lista_contactos')
     else:
         form = ContactoForm(instance=contacto)
     return render(request, 'contactos/editar_contacto.html', {'form': form})
@@ -39,6 +39,6 @@ def eliminar_contacto(request, id):
     contacto = get_object_or_404(Contacto, id=id)
     if request.method == 'POST':
         contacto.delete()
-        return redirect('listar_contactos')
+        return redirect('lista_contactos')
     return render(request, 'contactos/eliminar_contacto.html', {'contacto': contacto})
 

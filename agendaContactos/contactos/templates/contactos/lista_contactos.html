@@ -19,8 +19,8 @@
                     <td>{{ contacto.nombre }}</td>
                     <td>{{ contacto.telefono }}</td>
                     <td>{{ contacto.correo }}</td>
-                    <td>{{ contacto.direccion }}</td>
-                    <td>
+                    <td class="direccion">{{ contacto.direccion }}</td>
+                    <td class="acciones">
                         <a href="{% url 'editar_contacto' contacto.pk %}">Editar</a>
                         <a href="{% url 'eliminar_contacto' contacto.pk %}">Eliminar</a>
                     </td>
@@ -30,4 +30,5 @@
     </table>
 
 {% endblock %}
+
 

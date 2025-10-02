@@ -13,19 +13,25 @@ email_validator = RegexValidator(
     message="El correo debe ser Gmail, Hotmail o Outlook(ej: usuario@gmail.com o usuario@hotmail.com)."
 )
 
-class Contacto(models.Model):
+class Contacto(models.Model):  #Crea Contacto en un tabla de BD
     nombre = models.CharField(max_length=100)
     telefono = models.CharField(
         max_length=12,
         validators=[phone_validator],
-        unique=True
+        unique=True,
+        error_messages={
+            "unique": "Ya existe un contacto con este teléfono.",
+        }        
     )
     correo = models.CharField(
         max_length=100,
         validators=[email_validator],
-        unique=True
+        unique=True,
+        error_messages={
+            "unique": "Ya existe un contacto con este correo.",
+        }    
     )
     direccion = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.nombre
+    def __str__(self):  
+        return self.nombre 
