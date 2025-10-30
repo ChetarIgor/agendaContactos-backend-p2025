@@ -8,6 +8,26 @@ C:\ProgramData\anaconda3\Scripts\activate
 pip install -r requirements.txt
 
 
-# migrate
+# activar el VENV
+venv\Scripts\activate
+
+# migraciones
+
+
+# .env con 
+
+user=postgres.fqkokqbyetrtloykhskw 
+password=[YOUR_PASSWORD] 
+host=aws-1-us-east-1.pooler.supabase.com
+port=6543
+dbname=postgres
+
+# Crear super user
+python manage.py createsuperuser
+
+# migraciones
+
+python manage.py makemigrations
+python manage.py migrate
 
 
