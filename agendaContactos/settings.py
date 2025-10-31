@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!jhlm1=f7s_owwgpixlu50j743uw!jcm&k6p0fp4w)^5ir$=sz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -37,7 +37,9 @@ STATIFILES_DIRS = [
 ]
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    'localhost',
+    'agendacontactos-backend-p2025.onrender.com',
 ]
 
 
