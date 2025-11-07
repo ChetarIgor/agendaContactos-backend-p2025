@@ -1,7 +1,14 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r"users", views.UserViewSet)
+router.register(r"groups", views.GroupViewSet)
 
 urlpatterns = [
+    path("", include(router.urls)),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path('', views.inicio, name='inicio'),  # Página de inicio
     path('agregar/', views.agregar_contacto, name='agregar_contacto'), # Página para agregar contacto
     path('lista/', views.lista_contactos, name='lista_contactos'), # Página para ver la lista de contactos

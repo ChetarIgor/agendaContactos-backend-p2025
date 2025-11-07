@@ -55,7 +55,13 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'contactos',  #Añadimos la app contactos para trabajar con ella
+    'rest_framework'
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,14 +97,21 @@ WSGI_APPLICATION = 'agendaContactos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+#DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql",
+#        "NAME": os.getenv("DBNAME"),
+#        "USER": os.getenv("USER"),
+#        "PASSWORD": os.getenv("PASSWORD"),
+#        "HOST": os.getenv("HOST"),
+#        "PORT": os.getenv("DB_PORT"),
+#    }
+#}
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DBNAME"),
-        "USER": os.getenv("USER"),
-        "PASSWORD": os.getenv("PASSWORD"),
-        "HOST": os.getenv("HOST"),
-        "PORT": os.getenv("DB_PORT"),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
     }
 }
 
